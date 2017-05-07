@@ -80,7 +80,7 @@ class Article(models.Model):
         tag_list = tags.split(' ')
         for tag in tag_list:
             if tag:
-                t, created = Tag.objects.get_or_create(tag=tag.lower(), article=self)
+                Tag.objects.get_or_create(tag=tag.lower(), article=self)
 
     def get_tags(self):
         return Tag.objects.filter(article=self)
