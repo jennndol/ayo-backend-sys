@@ -7,33 +7,6 @@ from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
 
 
-class Tag(models.Model):
-    tag = models.CharField(max_length=50)
-    article = models.ForeignKey(Article)
-
-    class Meta:
-        verbose_name = _("Tag")
-        verbose_name_plural = _("Tags")
-        unique_together = (('tag', 'article'),)
-        index_together = [['tag', 'article'], ]
-
-    def __str__(self):
-        return self.tag
-
-    @staticmethod
-    def get_popular_tags():
-        tags = Tag.objects.all()
-        count = {}
-        for tag in tags:
-            if tag.article.status == Article.PUBLISHED:
-                if tag.tag in count:
-                    count[tag.tag] = count[tag.tag] + 1
-                else:
-                    count[tag.tag] = 1
-        sorted_count = sorted(count.items(), key=lambda t: t[1], reverse=True)
-        return sorted_count[:20]
-
-
 class Article(models.Model):
     DRAFT = 'D'
     PUBLISHED = 'P'
@@ -93,3 +66,30 @@ class Article(models.Model):
 
     def get_summary_as_markdown(self):
         return markdown.markdown(self.get_summary(), safe_mode='escape')
+
+
+class Tag(models.Model):
+    tag = models.CharField(max_length=50)
+    article = models.ForeignKey(Article)
+
+    class Meta:
+        verbose_name = _("Tag")
+        verbose_name_plural = _("Tags")
+        unique_together = (('tag', 'article'),)
+        index_together = [['tag', 'article'], ]
+
+    def __str__(self):
+        return self.tag
+
+    @staticmethod
+    def get_popular_tags():
+        tags = Tag.objects.all()
+        count = {}
+        for tag in tags:
+            if tag.article.status == Article.PUBLISHED:
+                if tag.tag in count:
+                    count[tag.tag] = count[tag.tag] + 1
+                else:
+                    count[tag.tag] = 1
+        sorted_count = sorted(count.items(), key=lambda t: t[1], reverse=True)
+        return sorted_count[:20]
