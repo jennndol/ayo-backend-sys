@@ -118,8 +118,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = (PROJECT_DIR.child('locale'),)
+STATIC_ROOT = (PROJECT_DIR.child('staticfiles'),)
 
 STATICFILES_DIRS = (
     PROJECT_DIR.child('static'),
 )
+
+MEDIA_ROOT = (PROJECT_DIR.parent.child('staticfiles'),)
+
+MEDIA_URL = '/media/'
