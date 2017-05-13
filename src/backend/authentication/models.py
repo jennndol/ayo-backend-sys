@@ -1,6 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+from backend import settings
+
+
 class Profile(models.Model):
     user = models.OneToOneField(User)
     bio = models.CharField(max_length=255, null=True, blank=True)
@@ -13,3 +16,6 @@ class Profile(models.Model):
 
     def get_bio(self):
         return self.bio
+
+    def get_picture(self):
+        pass
