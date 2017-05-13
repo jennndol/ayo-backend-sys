@@ -1,3 +1,8 @@
+import os
+
+import hashlib
+import urllib
+
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -18,4 +23,14 @@ class Profile(models.Model):
         return self.bio
 
     def get_picture(self):
-        pass
+        no_picture = settings.STATIC_ROOT + '/user.png'
+        try:
+            filename = settings.MEDIA_ROOT + '/profile_pictures/' + \
+                       self.user.username + '.jpg'
+            picture_url = settings.MEDIA_URL + 'profile_pictures/' + \
+                          self.user.username + '.jpg'
+            if os.path.isfile(filename):
+                return picture_url
+
+        except Exception:
+            return no_picture
