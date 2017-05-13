@@ -34,3 +34,12 @@ class Profile(models.Model):
 
         except Exception:
             return no_picture
+
+    def get_screen_name(self):
+        try:
+            if self.user.get_full_name():
+                return self.user.get_full_name()
+            else:
+                return self.user.username
+        except:
+            return self.user.username
