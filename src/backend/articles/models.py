@@ -15,7 +15,7 @@ class Article(models.Model):
         (PUBLISHED, 'Published'),
     )
     title = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255, null=True, blank=True)
+    slug = models.SlugField(max_length=255, null=True, blank=True, unique=True)
     content = models.TextField()
     status = models.CharField(max_length=1, choices=STATUS, default=DRAFT)
     created_by = models.ForeignKey(User)
