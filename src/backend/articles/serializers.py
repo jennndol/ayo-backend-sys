@@ -10,15 +10,16 @@ class ArticleSerializer(serializers.Serializer):
     def create(self, validated_data):
         """
         Create and return a new Article instance, given the validated data
-        :param validated_data: 
+        :param validated_data: title, content
         :return: Article instance
         """
         return Article.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
         """
-        :param instance: 
-        :param validated_data: 
+        Update and return an existing Article instance, given the validated data.
+        :param instance: article
+        :param validated_data: title, content
         :return: instance
         """
         instance.title = validated_data.get('title', instance.title)

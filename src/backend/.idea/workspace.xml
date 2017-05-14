@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a20535e7-052c-4b72-a7a5-20a1e31cdda4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/articles/serializers.py" afterPath="$PROJECT_DIR$/articles/serializers.py" />
     </list>
@@ -58,8 +57,8 @@
       <file leaf-file-name="serializers.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/articles/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+            <state relative-caret-position="346">
+              <caret line="21" column="45" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -655,7 +654,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494718086525</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Add create and update function into ArticleSerializer class">
+      <created>1494803416155</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1494803416155</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView">
@@ -724,7 +730,8 @@
     <MESSAGE value="Remove unused code from urls.py" />
     <MESSAGE value="Add unique attribute for slug" />
     <MESSAGE value="Change settings.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change settings.py" />
+    <MESSAGE value="Add create and update function into ArticleSerializer class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add create and update function into ArticleSerializer class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -972,8 +979,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/articles/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        <state relative-caret-position="346">
+          <caret line="21" column="45" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
