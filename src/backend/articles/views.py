@@ -26,6 +26,7 @@ class ArticleList(APIView):
 
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
+        # TODO implement automatically add user who add article
 
 
 class ArticleDetail(APIView):
