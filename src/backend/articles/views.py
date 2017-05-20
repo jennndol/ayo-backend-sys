@@ -34,7 +34,8 @@ class ArticleDetail(APIView):
     Retrieve, update or delete a article instance.
     """
 
-    def get_object(self, pk):
+    @staticmethod
+    def get_object(pk):
         try:
             return Article.objects.get(pk=pk)
         except Article.DoesNotExist:
