@@ -4,6 +4,9 @@ from .models import Article
 
 
 class ArticleSerializer(serializers.Serializer):
+    """
+    Serializing article
+    """
     title = serializers.CharField(max_length=255)
     content = serializers.CharField()
     created_by = serializers.ReadOnlyField(source='created_by.username')
