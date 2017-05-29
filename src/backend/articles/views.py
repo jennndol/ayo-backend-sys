@@ -19,14 +19,13 @@ class ArticleList(APIView):
 
     def post(self, request, format=None):
         serializer = ArticleSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
+        if serializer.is_valid(raise_exception=True):
+            self.perform_create(serializer)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
-        # TODO implement automatically add user who add article
 
 
 class ArticleDetail(APIView):
