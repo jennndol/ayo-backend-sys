@@ -20,6 +20,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from articles.views import ArticleList, ArticleDetail
 
 urlpatterns = [
+# TODO: Add admin url here
     url(r'^articles/$', ArticleList.as_view()),
     url(r'^articles/(?P<pk>[0-9]+)/$', ArticleDetail.as_view()),
 ]

@@ -25,6 +25,7 @@ class ArticleList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def perform_create(self, serializer):
+        # TODO: Make sure perform_create method works
         serializer.save(created_by=self.request.user)
 
 
