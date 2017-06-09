@@ -33,6 +33,9 @@ class Profile(models.Model):
         except Exception:
             return no_picture
 
+    def get_articles(self):
+        return Articles.objects.filter()
+
     def get_screen_name(self):
         try:
             if self.user.get_full_name():
